@@ -1,0 +1,34 @@
+function timeConversion(s) {
+    // Write your code here
+    
+    let[hh, mm, ss] = s.split(':');
+    let aa = s.slice(-2);
+//   console.log(mm);
+//   console.log(s);
+  let time='';
+//   console.log(s);
+//   console.log(aa);
+ if (aa === 'AM') {
+    if (hh === '12') {
+      hh = '00';
+    }
+    else{
+            hh =hh;
+    }
+  } else if (aa === 'PM') {
+    if (hh !== '12') {
+      hh = String(Number(hh) + 12);
+    }
+    else{
+            hh = '12';
+    }
+  }
+
+  const Time = `${hh}:${mm}:${ss}`;
+  time = Time.substring(8,0);
+console.log(time);
+  return time;
+
+
+}
+console.log(timeConversion('12:00:00AM'));
