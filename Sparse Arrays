@@ -1,0 +1,34 @@
+function matchingStrings(strings, queries) {
+    // Write your code here
+let count = {};
+let freq =[];
+let result = [];
+queries.forEach(query=>{
+       
+        
+ strings.forEach(string=>{
+                if(query===string){
+                        count[query] = (count[query]||0)+1;
+                        freq.push(query)
+                }
+               else if(!strings.includes(query)){
+                       count[query] = 0;
+               } 
+     
+        })     
+})
+
+ for(let v in count){
+        result.push(count[v]);      
+ }
+ 
+
+// console.log(count);
+ console.log(result);
+ return result;
+
+}
+
+let a= ['a','b','a','c'];
+let b=['a','b'];
+console.log(matchingStrings(a,b));
