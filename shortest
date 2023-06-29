@@ -1,0 +1,48 @@
+function shortest(cars,k){
+  let randomArr=[];
+  let allCase=[];
+  let sortRanArr;
+  let sortNum = cars.sort(function(a,b){
+    return a-b;
+  });
+  
+  console.log(sortNum);
+ let randNum;
+  
+ function randonCase(c,kk){ 
+   
+  if(!allCase.includes(randomArr) && randomArr.length != kk){ 
+    for(let i =0; i<=kk;i++){
+     randNum = c[ Math.floor(Math.random()* c.length)];
+    
+   if(!randomArr.includes(randNum)){ 
+     //randNum = c[ Math.floor(Math.random()* c.length)];
+     randomArr.push(randNum);
+   }
+    }
+    sortRanArr = randomArr.sort(function(a,b){
+    return a-b;
+  })
+        allCase.push(sortRanArr);
+    
+  } 
+   
+ }
+  randonCase(cars,k);
+  allCase.push(randomArr);
+  console.log(randNum);
+   console.log(randomArr);
+  // console.log(allCase);
+// if(!allCase.includes(randomArr)){
+// randonCase(cars,k);
+// }
+  // console.log(allCase);
+  // if(!allCase.includes(sortRanArr)){
+  //   randonCase(cars,k);
+  // }
+  console.log(allCase);
+}
+
+const a= [6,2,7,12];
+const b=3;
+console.log(shortest(a,b))
