@@ -2,11 +2,14 @@
 function shortest(cars,k){
   let result =[];
   let ans=[]
+ 
   function checkK(thisArr, start){
+     //checking the length of thisArr to have the same amount as k if it is equal to k slice it and push to array result
     if(thisArr.length ===k){
       result.push(thisArr.slice());
       return;
     }
+    //loop member of array cars and push to thisArr then call checkK function to start check the length
     for(let i = start; i<cars.length;i++){
     thisArr.push(cars[i]);
     checkK(thisArr, i+1);
@@ -14,7 +17,7 @@ function shortest(cars,k){
   }
   }
   checkK([],0)
-  // return result;
+  console.log('this is result')
   console.log(result);
   for(let f=0; f< result.length;f++){
     let ff = result[f];
@@ -24,9 +27,6 @@ function shortest(cars,k){
     console.log(minNum)
     let answer = (maxNum - minNum)+1;
     ans.push(answer);
-    // for(let l =0; l< ans.length;l++){
-    //   if(answer< ans[])
-    // }
   }
   console.log(ans);
   let minAns = Math.min(...ans);
@@ -47,8 +47,7 @@ function shortest(cars,k){
 
 const a= [6,2,7,12];
 const b=3;
-console.log(shortest(a,b))
-
+console.log(shortest(a,b));
 
 
 
