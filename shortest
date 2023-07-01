@@ -1,3 +1,77 @@
+//final method
+function shortest(cars,k){
+  let result =[];
+  let ans=[]
+  function checkK(thisArr, start){
+    if(thisArr.length ===k){
+      result.push(thisArr.slice());
+      return;
+    }
+    for(let i = start; i<cars.length;i++){
+    thisArr.push(cars[i]);
+    checkK(thisArr, i+1);
+    thisArr.pop();
+  }
+  }
+  checkK([],0)
+  // return result;
+  console.log(result);
+  for(let f=0; f< result.length;f++){
+    let ff = result[f];
+    console.log(ff);
+    let minNum= Math.min(...ff);
+    let maxNum= Math.max(...ff);
+    console.log(minNum)
+    let answer = (maxNum - minNum)+1;
+    ans.push(answer);
+    // for(let l =0; l< ans.length;l++){
+    //   if(answer< ans[])
+    // }
+  }
+  console.log(ans);
+  let minAns = Math.min(...ans);
+  console.log('ขนาดหลังคาที่สั้นที่สุด')
+  console.log(minAns)
+  let ind = ans.findIndex(checkInd);
+  function checkInd(aa){
+    return aa === minAns;
+  }
+  console.log(ind);
+  let arrInd = result[ind];
+  arrInd.sort(function(a,b){
+    return a-b;
+  })
+  console.log(arrInd);
+  return (`The shortest length is ${minAns}.`);
+}
+
+const a= [6,2,7,12];
+const b=3;
+console.log(shortest(a,b))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//try second method
 function shortest(cars,k){
   let randomArr=[];
   let allCase=[];
