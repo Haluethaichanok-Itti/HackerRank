@@ -1,0 +1,35 @@
+const products =[
+  ["key","50","2013"],
+  ["fan","100","2013"],
+  ["lock","100","2013"],
+  ["table","200","2011"],
+  ["toy","500","2011"]
+];
+const queries=[
+  ["Type1","2013"],
+  ["Type2","500"],
+  ["Type3","500"],
+  ["Type1","2011"]
+];
+function queryData(type){
+  let year;
+  let allInd=[];
+  if(type === "Type1"){
+    year=0
+    if(queries.includes(year)){
+      
+    }
+  }
+  else if(type=== "Type2"){
+    
+  }
+  else if(type=== "Type3"){
+    
+  }
+  // let ind = queries.indexOf(0,"Type3");
+  
+  // let ind = [].concat.apply([],([].concat.apply([],queries))).indexOf("Type1");
+  
+  console.log(ind);
+};
+queryData(products,queries);
