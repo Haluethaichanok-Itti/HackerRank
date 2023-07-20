@@ -1,7 +1,7 @@
 const products =[
   ["key","50","2013"],
-  ["fan","100","2013"],
-  ["lock","100","2013"],
+  ["fan","100","2012"],
+  ["lock","150","2013"],
   ["table","200","2011"],
   ["toy","500","2011"]
 ];
@@ -11,25 +11,43 @@ const queries=[
   ["Type3","500"],
   ["Type1","2011"]
 ];
-function queryData(type){
-  let year;
-  let allInd=[];
+let answer =[];
+  let ans =[];
+const y= "2013";
+const t = "Type3";
+const p = "100" ;
+
+function queryData(type,dep){
+
+  let exp="";
+
   if(type === "Type1"){
-    year=0
-    if(queries.includes(year)){
-      
+    exp = "สินค้าถูกผลิตในปี"
+    console.log(type);
+    for(product of products){
+      console.log(product)
+     if(product.includes(dep)){
+      ans.push(product[0]);  }
     }
   }
   else if(type=== "Type2"){
-    
+    exp = 'สินค้าที่ราคาต่ำกว่า';
+     for(product of products){
+       if(parseInt(product[1]) <parseInt(dep)){
+         ans.push( product[0] );
+       }
+     }
   }
   else if(type=== "Type3"){
-    
+     exp = 'สินค้าที่ราคาสูงกว่า';
+     for(product of products){
+       if(parseInt(product[1]) >parseInt(dep)){
+         ans.push( product[0] );
+       }
+     }
   }
-  // let ind = queries.indexOf(0,"Type3");
-  
-  // let ind = [].concat.apply([],([].concat.apply([],queries))).indexOf("Type1");
-  
-  console.log(ind);
+
+  return exp + dep +' '+ ans;
 };
-queryData(products,queries);
+
+console.log(queryData(t,p));
