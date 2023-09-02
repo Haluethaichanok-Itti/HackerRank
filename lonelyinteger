@@ -1,0 +1,24 @@
+function lonelyinteger(a) {
+    // Write your code here
+    let count ={};
+    for(let i = 0; i < a.length ; i++){
+            let ele = a[i];
+            if(count[ele]){
+                    count[ele] += 1;
+            }else{
+                    count[ele] = 1;
+            }
+    }
+console.log(count);
+let result;
+for(const key in count){
+        console.log("count[key]",count[key]);
+        if(count[key]==1){
+         return result = key; 
+               
+        }
+}
+
+}
+let n = [1,2,3,4,2,3,1];
+console.log(lonelyinteger(n));
