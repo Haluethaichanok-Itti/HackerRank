@@ -1,0 +1,33 @@
+function diagonalDifference(arr) {
+    // Write your code here
+console.log(arr); //[ [ 11, 2, 4 ], [ 4, 5, 6 ], [ 10, 8, -12 ] ]
+let result;
+ let first = [];
+  let sec =[];
+let n = arr.length;
+  console.log('n',n);
+  for(let i =0 ; i<n; ){
+    for(let j =0; j < n ; j++){
+      console.log('i',i);
+        // console.log('j',j);
+        // console.log(arr[i][j]);
+      first.push(arr[i][j]);
+      i++;
+    }
+  }
+  console.log('first',first);
+  for(let i =0 ; i<n; ){
+    n -=1
+    for(let j = n ; j >= 0 ; j--){
+      console.log('i',i);
+      sec.push(arr[i][j]);
+      i++;
+    }
+  }
+  console.log('sec',sec);
+ 
+  result = Math.abs(first.reduce((acc,cur)=> { return acc + cur; }) - sec.reduce((acc,cur)=> { return acc + cur; }));
+  return result;
+}
+let a = [ [ 11, 2, 4 ], [ 4, 5, 6 ], [ 10, 8, -12 ] ];
+console.log(diagonalDifference(a));
